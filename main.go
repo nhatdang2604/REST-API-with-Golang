@@ -72,3 +72,4 @@ func main() {
 	router.POST(ALBUMS_PATH, postAlbums)
 	router.Run(PATH)
 }
+
