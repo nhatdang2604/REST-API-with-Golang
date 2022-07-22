@@ -41,7 +41,7 @@ func postAlbums(context *gin.Context) {
 
 	//Add the new album to the slice
 	albums = append(albums, newAlbum)
-	context.IntendedJSON(http.StatusCreated, newAlbum)
+	context.IndentedJSON(http.StatusCreated, newAlbum)
 
 
 }
