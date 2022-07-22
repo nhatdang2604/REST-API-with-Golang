@@ -22,7 +22,7 @@ var (
 	}
 
 	PATH = "localhost:8080"
-	albums_PATH = "/albums"
+	ALBUMS_PATH = "/albums"
 )
 
 //Respond with the list of all albums as JSON
@@ -31,7 +31,7 @@ func getAlbums(context *gin.Context) {
 }
 
 //Add an album from JSON recieved in the request body
-func postAlbum(context *gin.Context) {
+func postAlbums(context *gin.Context) {
 	var newAlbum album
 	
 	//Call BindJSON to bind the recievedJSON to newAlbum
@@ -48,6 +48,7 @@ func postAlbum(context *gin.Context) {
 
 func main() {
 	router := gin.Default()
-	router.GET(albums_PATH, getAlbums)
+	router.GET(ALBUMS_PATH, getAlbums)
+	router.POST(ALBUMS_PATH, postAlbums)
 	router.Run(PATH)
 }
